@@ -4,7 +4,8 @@ services:
     container_name: mariadb
     volumes:
       - ./cy-notes.sql:/docker-entrypoint-initdb.d/dump.sql
-      - 3306:3306
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
